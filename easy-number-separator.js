@@ -61,10 +61,11 @@ function easyNumberSeparator(config) {
 
   listenFields()
 
+  // TODO: this no longer works. Should use MutationObserver instead
   // Fire separator when every element append to page
-  document.addEventListener("DOMNodeInserted", function (e) {
-    if ((e.target).classList.contains(obj.selector.replace('.', ''))) {
-      listenFields()
-    }
-  });
+  // document.addEventListener("DOMNodeInserted", function (e) {
+  //   if ((e.target).classList.contains(obj.selector.replace('.', ''))) {
+  //     listenFields()
+  //   }
+  // });
 }
