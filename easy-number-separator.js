@@ -38,6 +38,8 @@ function easyNumberSeparator(config) {
 
   function listenFields() {
     document.querySelectorAll(obj.selector).forEach(function (el) {
+      el.addEventListener('paste', e => e.preventDefault()); // Disallow pasting
+      el.addEventListener('drop', e => e.preventDefault()); // Disallow dropping
       el.addEventListener("input", function (e) {
         const reg = new RegExp(
           `^-?\\d*[${obj.separator}${obj.decimalSeparator}]?(\\d{0,3}${obj.separator})*(\\d{3}${obj.separator})?\\d{0,3}$`
